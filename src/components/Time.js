@@ -130,22 +130,24 @@ useEffect(() => {
 
 useEffect(() => {
         const interval = setInterval(() => {
-            if (gd && new Date().getHours() == 0 && new Date().getMinutes() == 0 && new Date().getSeconds() < 1) {
+            if (gd && new Date().getHours() == 0 && new Date().getMinutes() == 0 && new Date().getSeconds() == 3) {
                 console.log("aaa")
                 setMilisec(0)
                 setSec(0)
                 setMin(0)
                 setHour(0)
-                setSavedMilisec(0)
+                setSavedMilisec(1)
                 setBaseSec(new Date().getTime())
-                setToggle3(true)
                 start()
                 setGd(false)
                 
-            } else if (st && new Date().getHours() == 23 && new Date().getMinutes() == 58 && new Date().getSeconds() > 58) {
+            } else if (st && new Date().getHours() == 23 && new Date().getMinutes() == 59 && new Date().getSeconds() == 58) {
                 console.log("bbbb")
                 pause()
                 setGd(true)
+            } else if (gd && new Date().getHours() == 0 && new Date().getMinutes() == 0 && new Date().getSeconds() == 1) {
+                console.log("ccc")
+                createInitialTime()
             }
         }, 1000)
         return () => clearInterval(interval)
@@ -248,8 +250,6 @@ useEffect(() => {
 
 useEffect(() => {
     if (initialize4) {
-        getTimes()
-        getTimes2()
         console.log(data)
     } else {
         setInitialize4(true)
@@ -270,8 +270,8 @@ useEffect(() => {
 useEffect(() => {
     if (initialize12) {
     for (let i = 0; i<diffDuration.length; i++) {
-        if (diffDuration[i] > 100) {
-        setDiffFinalDuration(prev => [...prev,  (diffDuration[i] / 60).toFixed(2)])
+        if (diffDuration[i] >= 60) {
+        setDiffFinalDuration(prev => [...prev,  Math.floor(diffDuration[i] / 60)])
         setTimesFinal(prev => [...prev,  times[i]])
     }}} else {
         setInitialize12(true)
@@ -309,6 +309,8 @@ const reset = () => {
 const createTime = async () => {
     try {
         await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/times`, milisecData)
+        getTimes()
+        getTimes2()
     }catch(error){
         console.log(error.message)
     }
@@ -325,7 +327,8 @@ const createInitialTime = async () => {
             minute: new Date().getMinutes(),
             second: new Date().getSeconds(),
         })
-        setCreateCheck(true)
+        getTimes()
+        getTimes2()
     }catch(error){
         console.log(error.message)
     }
@@ -342,6 +345,8 @@ const createStartTime = async () => {
             minute: new Date().getMinutes(),
             second: new Date().getSeconds(),
         })
+        getTimes()
+        getTimes2()
     }catch(error){
         console.log(error.message)
     }
@@ -368,11 +373,11 @@ const getTimes2 = async () => {
         setDiffDuration([])
         for (let i = 0; i < data.length; i++) {
             if (data[i].day == backForwardDay && data[i].month == backForwardMonth && data[i].year == backForwardYear) {
-            if(data[i].totalTime == 1 && data[i+1].totalTime != 0) {
+            if(data[i]?.totalTime == 1 && data[i+1]?.totalTime != 0) {
             setTimes(prev => [...prev, `${pad(data[i].hour)} : ${pad(data[i].minute)}`]) 
-            } else if (data[i].totalTime != 1 && data[i].totalTime != 0 && data[i-1].totalTime == 1) {
-            setDuration(prev => [...prev, Math.floor((data[i].totalTime) / 1000)])
-            }
+            } else if (data[i]?.totalTime != 1 && data[i]?.totalTime != 0 && data[i-1]?.totalTime == 1) {
+            setDuration(prev => [...prev, Math.floor((data[i]?.totalTime) / 1000)])
+            }   
         }}
         setIsLoading2(false)
     }catch(error){
@@ -618,9 +623,9 @@ const [toggleTask, setToggleTask] = useState(0)
                 </div>
                 </div>
                 <div className="time-buttons">
-                    <button onClick={start}>Başlat</button>
-                    <button onClick={pause}>Durdur ve Kaydet</button>
-                    <button onClick={reset}>Sıfırla</button>
+                    <button disabled={isLoading? true: false} onClick={start}>Başlat</button>
+                    <button disabled={isLoading? true: false} onClick={pause}>Durdur ve Kaydet</button>
+                    <button disabled={isLoading? true: false} onClick={reset}>Sıfırla</button>
                 </div>
                 <div className="left-bot">
                     <div className="bar-container">
