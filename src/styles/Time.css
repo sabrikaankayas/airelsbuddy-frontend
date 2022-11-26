@@ -315,6 +315,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-right: none;
     }
     .clocks {
         display: flex;
