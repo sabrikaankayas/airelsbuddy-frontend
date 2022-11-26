@@ -358,6 +358,7 @@ const getTimes = async () => {
     try {
         const {data} = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/times`)
         setData(data)
+        console.log("data alındı)
         setIsLoading(false)
     }catch(error){
         console.log(error)
