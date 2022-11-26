@@ -19,6 +19,7 @@ const [value, onChange] = useState(new Date());
 
 const [isLoading, setIsLoading] = useState(false)
 const [isLoading2, setIsLoading2] = useState(false)
+const [isLoading3, setIsLoading3] = useState(false)
 
 const [createCheck, setCreateCheck] = useState(false)
 
@@ -540,11 +541,14 @@ const [toggleTask, setToggleTask] = useState(0)
   }
 
   const getTasks = async () => {
+    setIsLoading(true)
     try {
       const {data} = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/tasks`)
       setTasks(data)
+      setIsLoading(false)
     }catch(error){
       console.log(error)
+      setIsLoading(false)
     }
   }
 
@@ -587,7 +591,7 @@ const [toggleTask, setToggleTask] = useState(0)
                 <div className="clocks">
                     <div className="time-clock">
                         <h4>Bugün</h4>
-                        {!isLoading & !isLoading2? 
+                        {!isLoading ? 
                         <h2><span>{hour}</span>:<span>{min}</span>:<span>{sec}</span></h2>
                         : <h2>Loading...</h2> 
                     }
@@ -659,7 +663,7 @@ const [toggleTask, setToggleTask] = useState(0)
                             </div>
                         </div>
                         <div className="total-time-graph">
-                        {!isLoading & !isLoading2 ? 
+                        {!isLoading2 ? 
                             <h5> Toplam Süre: {pad(Math.floor(duration[duration.length - 1] / (60 * 60)) % 60)} : {pad(Math.floor(duration[duration.length - 1] / 60) % 60)} : {pad(Math.floor(duration[duration.length - 1]) % 60)}</h5>
                         : <h5>Loading...</h5> 
                         }
@@ -670,7 +674,7 @@ const [toggleTask, setToggleTask] = useState(0)
                     </div>
                 </div>
                 <div className="completed-tasks">
-                    {!isLoading & !isLoading2 ?
+                    {!isLoading3 ?
                         tasks.map((task, index) => {
                             if(task.day == backForwardDay && task.month == backForwardMonth && task.year == backForwardYear && task.completed == true) {
                             return (
@@ -734,7 +738,7 @@ const [toggleTask, setToggleTask] = useState(0)
 
                  </div>
                  <div className="tasks">
-                 {!isLoading & !isLoading2 ? 
+                 {!isLoading3 ? 
                     <>
                         {
                         tasks.map((task, index) => {
