@@ -119,8 +119,9 @@ useEffect(() => {
 useEffect(() => {
     if (initialize9) {
         if (toggle === "2") {
-        console.log(`agaa ${data[0].totalTime}`)
+        console.log(`agaa`)
         setMilisec(data[0].totalTime)
+         console.log(`agbb`)
         }
     } else {
         setInitialize9(true)
