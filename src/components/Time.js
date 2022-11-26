@@ -373,10 +373,10 @@ const getTimes2 = async () => {
         setDiffDuration([])
         for (let i = 0; i < data.length; i++) {
             if (data[i].day == backForwardDay && data[i].month == backForwardMonth && data[i].year == backForwardYear) {
-            if(data[i]?.totalTime == 1 && data[i+1]?.totalTime != 0) {
+            if(i != (data.length - 1) && data[i].totalTime == 1 && data[i+1].totalTime != 0) {
             setTimes(prev => [...prev, `${pad(data[i].hour)} : ${pad(data[i].minute)}`]) 
-            } else if (data[i]?.totalTime != 1 && data[i]?.totalTime != 0 && data[i-1]?.totalTime == 1) {
-            setDuration(prev => [...prev, Math.floor((data[i]?.totalTime) / 1000)])
+            } else if (i != 0 && data[i].totalTime != 1 && data[i].totalTime != 0 && data[i-1].totalTime == 1) {
+            setDuration(prev => [...prev, Math.floor((data[i].totalTime) / 1000)])
             }   
         }}
         setIsLoading2(false)
