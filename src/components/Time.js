@@ -17,6 +17,9 @@ const Time = () => {
 
 const [value, onChange] = useState(new Date());
 
+const [isLoading, setIsLoading] = useState(false)
+const [isLoading2, setIsLoading2] = useState(false)
+
 const [createCheck, setCreateCheck] = useState(false)
 
 const [initialize, setInitialize] = useState(false)
@@ -344,14 +347,18 @@ const createStartTime = async () => {
 }
 
 const getTimes = async () => {
+    setIsLoading(true)
     try {
         const {data} = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/times`)
         setData(data)
+        setIsLoading(false)
     }catch(error){
         console.log(error)
+        setIsLoading(false)
     }
 }
 const getTimes2 = async () => {
+    setIsLoading2(true)
     try {
         const {data} = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/times/backUp`)
         setData2(data)
@@ -366,8 +373,10 @@ const getTimes2 = async () => {
             setDuration(prev => [...prev, Math.floor((data[i].totalTime) / 1000)])
             }
         }}
+        setIsLoading2(false)
     }catch(error){
         console.log(error)
+        setIsLoading2(false)
     }
 }
 
@@ -578,7 +587,10 @@ const [toggleTask, setToggleTask] = useState(0)
                 <div className="clocks">
                     <div className="time-clock">
                         <h4>Bugün</h4>
+                        {!isLoading ? 
                         <h2><span>{hour}</span>:<span>{min}</span>:<span>{sec}</span></h2>
+                        : <h2>Loading...</h2> 
+                    }
                     </div>
                     <div className="time-clock-temp">
                         <h4>Kronometre</h4>             
@@ -647,7 +659,10 @@ const [toggleTask, setToggleTask] = useState(0)
                             </div>
                         </div>
                         <div className="total-time-graph">
+                        {!isLoading2 ? 
                             <h5> Toplam Süre: {pad(Math.floor(duration[duration.length - 1] / (60 * 60)) % 60)} : {pad(Math.floor(duration[duration.length - 1] / 60) % 60)} : {pad(Math.floor(duration[duration.length - 1]) % 60)}</h5>
+                        : <h5>Loading...</h5> 
+                        }
                         </div>
                     </div>
                     <div className="calender-container">
@@ -655,7 +670,7 @@ const [toggleTask, setToggleTask] = useState(0)
                     </div>
                 </div>
                 <div className="completed-tasks">
-                    {
+                    {!isLoading ?
                         tasks.map((task, index) => {
                             if(task.day == backForwardDay && task.month == backForwardMonth && task.year == backForwardYear && task.completed == true) {
                             return (
@@ -667,6 +682,7 @@ const [toggleTask, setToggleTask] = useState(0)
                             </div>
                             )}
                         })
+                        : <h5>Loading...</h5> 
                     }
                 </div>
             </div>
@@ -718,6 +734,7 @@ const [toggleTask, setToggleTask] = useState(0)
 
                  </div>
                  <div className="tasks">
+                 {!isLoading ? 
                     <>
                         {
                         tasks.map((task, index) => {
@@ -742,6 +759,8 @@ const [toggleTask, setToggleTask] = useState(0)
                         })
                         }
                     </>
+                        : <h4>Loading...</h4> 
+                    }
                 </div>
             </div>
         </div>
