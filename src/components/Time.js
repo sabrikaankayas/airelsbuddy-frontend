@@ -559,7 +559,7 @@ const [toggleTask, setToggleTask] = useState(0)
         await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/tasks`, {
           lecture: task.lecture,
           type: task.type,
-          detail,
+          detail: task.detail,
           completed: false,
           year: new Date().getFullYear(),
           month: new Date().getMonth() + 1,
