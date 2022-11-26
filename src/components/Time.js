@@ -587,7 +587,7 @@ const [toggleTask, setToggleTask] = useState(0)
                 <div className="clocks">
                     <div className="time-clock">
                         <h4>Bugün</h4>
-                        {!isLoading ? 
+                        {!isLoading & !isLoading2? 
                         <h2><span>{hour}</span>:<span>{min}</span>:<span>{sec}</span></h2>
                         : <h2>Loading...</h2> 
                     }
@@ -659,7 +659,7 @@ const [toggleTask, setToggleTask] = useState(0)
                             </div>
                         </div>
                         <div className="total-time-graph">
-                        {!isLoading2 ? 
+                        {!isLoading & !isLoading2 ? 
                             <h5> Toplam Süre: {pad(Math.floor(duration[duration.length - 1] / (60 * 60)) % 60)} : {pad(Math.floor(duration[duration.length - 1] / 60) % 60)} : {pad(Math.floor(duration[duration.length - 1]) % 60)}</h5>
                         : <h5>Loading...</h5> 
                         }
@@ -670,7 +670,7 @@ const [toggleTask, setToggleTask] = useState(0)
                     </div>
                 </div>
                 <div className="completed-tasks">
-                    {!isLoading ?
+                    {!isLoading & !isLoading2 ?
                         tasks.map((task, index) => {
                             if(task.day == backForwardDay && task.month == backForwardMonth && task.year == backForwardYear && task.completed == true) {
                             return (
@@ -734,7 +734,7 @@ const [toggleTask, setToggleTask] = useState(0)
 
                  </div>
                  <div className="tasks">
-                 {!isLoading ? 
+                 {!isLoading & !isLoading2 ? 
                     <>
                         {
                         tasks.map((task, index) => {
