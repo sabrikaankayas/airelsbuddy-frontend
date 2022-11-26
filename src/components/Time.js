@@ -98,6 +98,7 @@ useEffect(() => {
     if (initialize7) {
         createInitialTime()
         setToggle4(true)
+        console.log(`selamm ${times}`)
     } else {
         createInitialTime()
         setInitialize7(true)
@@ -118,9 +119,8 @@ useEffect(() => {
 useEffect(() => {
     if (initialize9) {
         if (toggle === "2") {
+        console.log(`agaa ${data[0].totalTime}`)
         setMilisec(data[0].totalTime)
-        console.log("x")
-        console.log(times)
         }
     } else {
         setInitialize9(true)
