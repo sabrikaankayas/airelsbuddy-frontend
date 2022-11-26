@@ -591,10 +591,7 @@ const [toggleTask, setToggleTask] = useState(0)
                 <div className="clocks">
                     <div className="time-clock">
                         <h4>Bugün</h4>
-                        {!isLoading ? 
                         <h2><span>{hour}</span>:<span>{min}</span>:<span>{sec}</span></h2>
-                        : <h2>Loading...</h2> 
-                    }
                     </div>
                     <div className="time-clock-temp">
                         <h4>Kronometre</h4>             
