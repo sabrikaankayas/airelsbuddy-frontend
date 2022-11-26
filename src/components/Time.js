@@ -674,7 +674,7 @@ const [toggleTask, setToggleTask] = useState(0)
                     </div>
                 </div>
                 <div className="completed-tasks">
-                    {!isLoading3 ?
+                    {
                         tasks.map((task, index) => {
                             if(task.day == backForwardDay && task.month == backForwardMonth && task.year == backForwardYear && task.completed == true) {
                             return (
@@ -686,7 +686,6 @@ const [toggleTask, setToggleTask] = useState(0)
                             </div>
                             )}
                         })
-                        : <h5>Loading...</h5> 
                     }
                 </div>
             </div>
@@ -738,7 +737,7 @@ const [toggleTask, setToggleTask] = useState(0)
 
                  </div>
                  <div className="tasks">
-                 {!isLoading3 ? 
+                 {
                     <>
                         {
                         tasks.map((task, index) => {
@@ -763,7 +762,6 @@ const [toggleTask, setToggleTask] = useState(0)
                         })
                         }
                     </>
-                        : <h4>Loading...</h4> 
                     }
                 </div>
             </div>
