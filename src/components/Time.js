@@ -639,7 +639,7 @@ const [toggleTask, setToggleTask] = useState(0)
                                                     color: 'white',
                                                     fontSize: 12,
                                                     precision: 0, integerSteps: true,
-                                                    stepSize: 2,
+                                                    stepSize: 30,
                                                 }
                                             },
                                             x: {
@@ -648,7 +648,6 @@ const [toggleTask, setToggleTask] = useState(0)
                                                     color: 'white',
                                                     fontSize: 12,
                                                     precision: 0, integerSteps: true,
-                                                    stepSize: 2
                                                 }
                                             },
                                         }
