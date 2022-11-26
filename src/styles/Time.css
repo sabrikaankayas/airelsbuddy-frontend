@@ -299,6 +299,312 @@
     font-size: 1.2rem;
 }
 
+
+
+/* MEDIA QUARIES (SMALL DEVICES) */
+@media screen and (max-width: 600px) {
+    .top-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #2F70AF;
+    }
+    .time-container {
+        padding-top: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .clocks {
+        display: flex;
+        width: 100%;
+    }
+    .time-clock {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .time-clock h4 {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .time-clock h2 {
+        color: #fff;
+        padding: 1rem 0;
+        background: radial-gradient(ellipse at center,  rgb(10, 46, 56)  0%, #02315E 70%);
+        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
+        width: 70%;
+        font-size: 1.3rem;
+        box-shadow: 20px 5px 13px -4px rgba(10,46,56,0.75);
+        border: 2px solid #806491;
+    }
+    .time-clock-temp {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .time-clock-temp h4 {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 500;
+    
+     }
+    .time-clock-temp h2 {
+        color: #fff;
+        padding: 1rem 0;
+        background: radial-gradient(ellipse at center,  rgb(10, 46, 56)  0%, #02315E 70%);
+        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
+        width: 70%;
+        font-size: 1.3rem;
+        box-shadow: 20px 5px 13px -4px rgba(10,46,56,0.75);
+        border: 2px solid #806491;
+    }
+    .time-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.8rem;
+    }
+    .time-buttons button {
+        margin: 0 0.2rem;
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        color: white;
+        background: radial-gradient(ellipse at center,  #0a2e38  0%, #02315E 70%);
+        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
+        border: 1px solid #806491;
+        border-radius: 10px;
+    }
+    .time-buttons button:nth-child(1):hover {
+        background: radial-gradient(ellipse at center,  #17720b  0%, #0a4602 70%);
+        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
+    }
+    .time-buttons button:nth-child(2):hover {
+        background: radial-gradient(ellipse at center,  #863480  0%, #75066c 70%);
+        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
+    }
+    .time-buttons button:nth-child(3):hover {
+        background: radial-gradient(ellipse at center,  #7c1d16  0%, #5e0202 70%);
+        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
+    }
+    .task-container {
+        flex: 3;
+        padding-top: 0.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 0.5rem;
+    }
+    .form-container {
+        width: 100%;
+        display: flex;
+        padding: 0 0.3rem;
+        padding-bottom: 0.3rem;
+        margin-bottom: 0.4rem;
+        border-bottom: none;
+    }
+    .form-container div {
+        text-align: center;
+    }
+    .form-container div:nth-child(1) {
+        flex: 3
+    }
+    .form-container div:nth-child(2) {
+        flex: 4
+    }
+    .form-container div:nth-child(3) {
+        flex: 4
+    }
+    .form-container div:nth-child(4) {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-container div {
+        text-align: center;
+    }
+    .form-container h4 {
+        color: white;
+        font-size: 0.9rem;
+    }
+    .form-container div input {
+        width: 90%;
+        text-align: center;
+        font-size: 0.8rem;
+        background-color: rgb(248, 177, 216);
+        margin-bottom: 0.3rem;
+        border: #806491;
+        color:rgb(31, 24, 24);
+    }
+    .form-container div input:focus {
+      outline: none;
+    }
+    .form-container div select {
+        width: 90%;
+        text-align: center;
+        font-size: 0.8rem;
+        background-color: #fee1e1;
+        border: #806491;
+        color:rgb(31, 24, 24);
+    }
+    .form-container div select:focus {
+        outline: none;
+    }
+    .form-container div:nth-child(4) button {
+        padding: 0.1rem 0.7rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.2rem;
+        cursor: pointer;
+        color: black;
+        background: radial-gradient(ellipse at center,  #f7eded  0%, #fee1e1 70%);
+        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
+        border: 1px solid #806491;
+        border-radius: 10px;
+        transition: all 0.4s;
+    }
+    .form-container div:nth-child(4) button:hover {
+        scale: 1.1
+    }
+    .tasks {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        overflow-y: auto;
+    }
+    .current-task-container {
+        width: 98%;
+        display: flex;
+        padding: 0.2rem 0.2rem;
+        border: 1px solid white;
+        background-color: #0f7e9b;
+        margin-bottom: 0.2rem;
+    }
+    .current-task-container div {
+        text-align: center;
+    }
+    .current-task-container div:nth-child(1) {
+        flex: 3
+    }
+    .current-task-container div:nth-child(2) {
+        flex: 3
+    }
+    .current-task-container div:nth-child(3) {
+        flex: 3
+    }
+    .current-task-container div:nth-child(4) {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .current-task-container div {
+        text-align: center;
+    }
+    .current-task-container h4 {
+        color: white;
+        font-size: 0.8rem;
+    }
+    .icon {
+        color: rgb(27, 216, 27);
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+    .icon2 {
+        color: rgb(136, 18, 18);
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .left-bot {
+        margin-top: 0.5rem;
+        display: flex;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 0.1rem;
+    }
+    .bar-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        flex: 4;
+    }
+    .bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .bar div:nth-child(1) {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .bar div:nth-child(2) {
+        width: 100%;
+        height: 100%;
+    }
+    .bar div:nth-child(3) {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .total-time-graph {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .calender-container {
+        margin-top: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 100%;
+        margin-bottom: 0.7rem;
+    }
+    .completed-tasks {
+        padding-top: 0.2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        overflow-x: auto;
+        border-top: none;
+        border-bottom: 3px solid #806491;
+    }
+    .completed-task {
+        display: flex;
+        margin-right: 0.2rem;
+        margin-bottom: 0.4rem;
+    }
+    .completed-task h5 {
+        font-size: 0.8rem;
+        margin-right: 0.2rem;
+        font-weight: 700;
+    }
+    .icon3 {
+        font-size: 1.2rem;
+    }
+}
+
+
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
