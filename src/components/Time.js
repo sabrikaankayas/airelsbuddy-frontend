@@ -552,7 +552,26 @@ const [toggleTask, setToggleTask] = useState(0)
     }
   }
 
+//Tick olunca gitmemesi newFormData olan kısma kadarki yer
+
   const setToComplete = async (task) => {
+        try {
+        await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/tasks`, {
+          lecture: task.lecture,
+          type: task.type,
+          detail,
+          completed: false,
+          year: new Date().getFullYear(),
+          month: new Date().getMonth() + 1,
+          day: new Date().getDate(),
+          hour: new Date().getHours(),
+          minute: new Date().getMinutes(),
+          second: new Date().getSeconds(),
+        })
+    } catch(error){
+      console.log(error)
+    }
+    setToggleTask(toggleTask + 1)
     const newFormData = {
       lecture: task.lecture,
       type: task.type,
@@ -678,7 +697,7 @@ const [toggleTask, setToggleTask] = useState(0)
                                 <h5>{task.lecture}</h5>
                                 <h5>{task.type}</h5>
                                 <h5>{task.detail}</h5>
-                                <TiTick className="icon3" onClick={() => setToComplete(task)}/>
+                                <TiTick className="icon3"/>
                             </div>
                             )}
                         })
