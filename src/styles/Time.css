@@ -170,12 +170,13 @@
 .form-container div:nth-child(4) button {
     padding: 0.2rem 1.2rem;
     font-size: 1.1rem;
+    font-weight: 500;
     margin-bottom: 0.2rem;
     cursor: pointer;
-    color: black;
-    background: radial-gradient(ellipse at center,  #f7eded  0%, #fee1e1 70%);
-    text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
-    border: 1px solid #806491;
+    color: white;
+    background: radial-gradient(ellipse at center,  #0f7e9b  0%, #0f7e9b 70%);
+    text-shadow: 0 0 20px rgb(12, 36, 44),  0 0 20px rgba(10, 175, 230, 0);
+    border: 1px solid white;
     border-radius: 10px;
     transition: all 0.4s;
 }
@@ -490,12 +491,13 @@
     .form-container div:nth-child(4) button {
         padding: 0.1rem 0.7rem;
         font-size: 0.9rem;
+        font-weight: 500;
         margin-bottom: 0.2rem;
         cursor: pointer;
-        color: black;
-        background: radial-gradient(ellipse at center,  #f7eded  0%, #fee1e1 70%);
-        text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
-        border: 1px solid #806491;
+        color: white;
+        background: radial-gradient(ellipse at center,  #0f7e9b  0%, #0f7e9b 70%);
+        text-shadow: 0 0 20px rgb(12, 36, 44),  0 0 20px rgba(10, 175, 230, 0);
+        border: 1px solid white;
         border-radius: 10px;
         transition: all 0.4s;
     }
