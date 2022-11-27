@@ -83,7 +83,7 @@
     padding: 0.5rem 3rem;
     font-size: 1.3rem;
     color: white;
-    background: rgb(71, 68, 68);
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #02315E 70%);
     text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
     border: 1px solid #806491;
     border-radius: 10px;
@@ -317,7 +317,7 @@
 
 
 /* MEDIA QUARIES (SMALL DEVICES) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (hover: hover) and (pointer: fine){
     .top-container {
         width: 100%;
         height: 100%;
@@ -403,24 +403,24 @@
         padding: 0.7rem 1rem;
         font-size: 1rem;
         color: white;
-        background: rgb(71, 68, 68);
+        background: radial-gradient(ellipse at center,  #0a2e38  0%, #02315E 70%);
         text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
         border: 1px solid #806491;
         border-radius: 10px;
     }
-    .time-buttons .time-button1:active {
+    .time-buttons .time-button1:hover {
         background: radial-gradient(ellipse at center,  #17720b  0%, #0a4602 70%);
         text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
     }
-    .time-buttons .time-button2:active {
+    .time-buttons .time-button2:hover {
         background: radial-gradient(ellipse at center,  #863480  0%, #75066c 70%);
         text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
     }
-    .time-buttons .time-button3:active {
+    .time-buttons .time-button3:hover {
         background: radial-gradient(ellipse at center,  #7c1d16  0%, #5e0202 70%);
         text-shadow: 0 0 20px rgb(30, 84, 102),  0 0 20px rgba(10, 175, 230, 0);
     }
-    .time-buttons .time-button-:disabled:active {
+    .time-buttons .time-button-:disabled:hover {
         background: none;
         text-shadow: none;
     }
@@ -501,7 +501,7 @@
         border-radius: 10px;
         transition: all 0.4s;
     }
-    .form-container div:nth-child(4) button:active {
+    .form-container div:nth-child(4) button:hover {
         scale: 1.1
     }
     .tasks {
