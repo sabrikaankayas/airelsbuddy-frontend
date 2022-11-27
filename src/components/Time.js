@@ -624,9 +624,9 @@ const [toggleTask, setToggleTask] = useState(0)
                 </div>
                 </div>
                 <div className="time-buttons">
-                    <button disabled={isLoading? true: false} onClick={start}>Başlat</button>
-                    <button disabled={isLoading? true: false} onClick={pause}>Durdur ve Kaydet</button>
-                    <button disabled={isLoading? true: false} onClick={reset}>Sıfırla</button>
+                    <button className={`${isLoading2 ? "time-button-disabled": "time-button1"}`} disabled={isLoading? true: false} onClick={start}>Başlat</button>
+                    <button className={`${isLoading2 ? "time-button-disabled": "time-button2"}`} disabled={isLoading? true: false} onClick={pause}>Durdur ve Kaydet</button>
+                    <button className="time-button3" disabled={isLoading? true: false} onClick={reset}>Sıfırla</button>
                 </div>
                 <div className="left-bot">
                     <div className="bar-container">
