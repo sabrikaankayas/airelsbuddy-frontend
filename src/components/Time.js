@@ -132,7 +132,7 @@ useEffect(() => {
         const interval = setInterval(() => {
             if (gd && new Date().getHours() == 0 && new Date().getMinutes() == 0 && new Date().getSeconds() == 3) {
                 console.log("aaa")
-                setMilisec(0)
+                setMilisec(1)
                 setSec(0)
                 setMin(0)
                 setHour(0)
@@ -147,6 +147,7 @@ useEffect(() => {
                 setGd(true)
             } else if (gd && new Date().getHours() == 0 && new Date().getMinutes() == 0 && new Date().getSeconds() == 1) {
                 console.log("ccc")
+                forward()
                 createInitialTime()
             }
         }, 1000)
