@@ -119,9 +119,8 @@ useEffect(() => {
 useEffect(() => {
     if (initialize9) {
         if (toggle === "2") {
-        console.log(`agaa`)
+        console.log(`agaa ${data[0].totalTime}`)
         setMilisec(data[0].totalTime)
-         console.log(`agbb`)
         }
     } else {
         setInitialize9(true)
@@ -357,8 +356,8 @@ const getTimes = async () => {
     setIsLoading(true)
     try {
         const {data} = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/times`)
+        console.log("data alındı")
         setData(data)
-        console.log("data alındı)
         setIsLoading(false)
     }catch(error){
         console.log(error)
