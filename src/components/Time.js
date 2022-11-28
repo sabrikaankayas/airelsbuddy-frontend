@@ -319,16 +319,15 @@ const createTime = async () => {
 
 const createInitialTime = async () => {
     try {
-        // await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/times`, {
-        //     totalTime: 0,
-        //     year: new Date().getFullYear(),
-        //     month: new Date().getMonth() + 1,
-        //     day: new Date().getDate(),
-        //     hour: new Date().getHours(),
-        //     minute: new Date().getMinutes(),
-        //     second: new Date().getSeconds(),
-        // })
-        console.log("app is initialized")
+        await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/times`, {
+            totalTime: 0,
+            year: new Date().getFullYear(),
+            month: new Date().getMonth() + 1,
+            day: new Date().getDate(),
+            hour: new Date().getHours(),
+            minute: new Date().getMinutes(),
+            second: new Date().getSeconds(),
+        })
         getTimes()
         getTimes2()
     }catch(error){
